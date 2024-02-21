@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #222;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #555;
+      border-radius: 5px;
+      background-color: #333;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-field {
+      margin-bottom: 15px;
+    }
+
+    .input-field label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input-field input[type="text"] {
+      width: 94%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #555;
+      color: #fff;
+      background-color: #333;
+    }
+
+    .input-field select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #555;
+      color: #fff;
+      background-color: #333;
+    }
+
+    .input-field button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 3px;
+      background-color: #059669;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Chat</h2>
+    <div class="input-field">
+      <label for="username">Nome de Usuário:</label>
+      <input type="text" id="username" placeholder="Nome de usuário...">
+    </div>
+    <div class="input-field">
+      <label for="room">Selecione a Sala:</label>
+      <select id="room">
+        <option value="React Native">React Native</option>
+        <option value="NodeJS">NodeJS</option>
+        <option value="Phyton">Phyton</option>
+      </select>
+    </div>
+    <div class="input-field">
+      <button onclick="enterChat()">Entrar</button>
+    </div>    
+  </div>
+
+  <script>
+    function enterChat() {
+      const usernameInput = document.getElementById('username')
+      const selectedRoom = document.getElementById('room').value
+
+      const username = usernameInput.value.trim()
+
+      console.log(username, selectedRoom)
+
+      if (username !== '') {
+        window.location.href = `chat.html?username=${username}&room=${selectedRoom}`
+      }
+    }
+  </script>
+</body>
+
+</html>
